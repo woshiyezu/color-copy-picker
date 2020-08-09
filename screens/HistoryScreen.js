@@ -12,7 +12,7 @@ import {
 import { SwipeListView } from "react-native-swipe-list-view";
 import { useDispatch } from "react-redux";
 import { deleteColor } from "../store/actions/user";
-import { getColor } from "./utils/color";
+import { getColor } from "../utils/color";
 import { useSelector } from "react-redux";
 import invert from "invert-color";
 

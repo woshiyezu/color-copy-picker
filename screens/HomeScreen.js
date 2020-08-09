@@ -10,7 +10,7 @@ import { FontAwesome } from "@expo/vector-icons";
 import { Root, Toast } from "native-base";
 import { useDispatch } from "react-redux";
 import { addColor } from "../store/actions/user";
-import { makeColor } from "./utils/color";
+import { makeColor } from "../utils/color";
 import invert from "invert-color";
 
 const styles = StyleSheet.create({
