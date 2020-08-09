@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import {
+  Dimensions,
   StyleSheet,
   View,
   TouchableOpacity,
@@ -12,6 +13,8 @@ import { useDispatch } from "react-redux";
 import { addColor } from "../store/actions/user";
 import { makeColor } from "../utils/color";
 import invert from "invert-color";
+import { ColorWheel } from "react-native-color-wheel";
+import colorsys from "colorsys";
 
 const styles = StyleSheet.create({
   container: {
@@ -41,7 +44,7 @@ const styles = StyleSheet.create({
 });
 
 export default HomeScreen = (props) => {
-  const [copiedColor, setCopiedColor] = useState("#000000");
+  const [copiedColor, setCopiedColor] = useState("#00ee00");
 
   useEffect(() => {}, []);
 
@@ -52,7 +55,17 @@ export default HomeScreen = (props) => {
   return (
     <Root>
       <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-        <SafeAreaView style={styles.container}></SafeAreaView>
+        <SafeAreaView style={styles.container}>
+          <ColorWheel
+            initialColor={copiedColor}
+            onColorChange={(hsv) => console.log({ hsv })}
+            onColorChangeComplete={(hsv) =>
+              setCopiedColor(colorsys.hsvToHex(hsv))
+            }
+            style={{ width: Dimensions.get("window").width }}
+            thumbStyle={{ height: 30, width: 30, borderRadius: 30 }}
+          />
+        </SafeAreaView>
         <View style={styles.bottomView}>
           <View style={styles.leftContainer} />
           <View style={styles.centerContainer}>
