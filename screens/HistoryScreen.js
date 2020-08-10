@@ -14,7 +14,6 @@ import { useDispatch } from "react-redux";
 import { deleteColor } from "../store/actions/user";
 import { getColor } from "../utils/color";
 import { useSelector } from "react-redux";
-import invert from "invert-color";
 
 const styles = StyleSheet.create({
   container: {
@@ -67,10 +66,6 @@ export default SwipeToDelete = () => {
         duration: 200,
         useNativeDriver: false,
       }).start(() => {
-        console.log("-----------------");
-        console.log(key);
-        console.log(value);
-        console.log("-----------------");
         dispatch(deleteColor({ color: getColor(key, value) }));
         const newData = [...listData];
         const prevIndex = listData.findIndex((item) => item.key === key);
@@ -81,15 +76,14 @@ export default SwipeToDelete = () => {
     }
   };
 
-  const rowFront = (color) => {
+  const rowFront = () => {
     return {
       alignItems: "flex-start",
-      backgroundColor: color,
+      backgroundColor: "white",
       borderBottomColor: "black",
       borderBottomWidth: 1,
       justifyContent: "center",
       height: 50,
-      paddingLeft: 20,
     };
   };
 
@@ -110,13 +104,23 @@ export default SwipeToDelete = () => {
           Alert.alert(`${data.item.code} Copied!`) ||
           Clipboard.setString(data.item.code)
         }
-        style={rowFront(data.item.code)}
+        style={rowFront()}
         underlayColor={"#AAA"}
       >
-        <View>
-          <Text style={{ color: invert(data.item.code) }}>
-            {data.item.code}
-          </Text>
+        <View style={{ flexDirection: "row" }}>
+          <View
+            style={{
+              backgroundColor: data.item.code,
+              marginLeft: 10,
+              marginRight: 10,
+              borderRadius: 5,
+              flex: 1,
+              height: 30,
+            }}
+          />
+          <View style={{ flex: 8, justifyContent: "center" }}>
+            <Text>{data.item.code}</Text>
+          </View>
         </View>
       </TouchableHighlight>
     </Animated.View>
