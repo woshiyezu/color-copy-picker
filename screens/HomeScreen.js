@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
 });
 
 export default HomeScreen = (props) => {
-  const [copiedColor, setCopiedColor] = useState("#00ee00");
+  const [copiedColor, setCopiedColor] = useState("#c8e9ff");
 
   useEffect(() => {}, []);
 
