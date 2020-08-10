@@ -12,7 +12,6 @@ import { Root, Toast } from "native-base";
 import { useDispatch } from "react-redux";
 import { addColor } from "../store/actions/user";
 import { makeColor } from "../utils/color";
-import invert from "invert-color";
 import { ColorWheel } from "react-native-color-wheel";
 import colorsys from "colorsys";
 
@@ -74,7 +73,7 @@ export default HomeScreen = (props) => {
                 Toast.show({
                   text: `${copiedColor} Copied!`,
                   textStyle: {
-                    color: invert(copiedColor),
+                    color: "black",
                   },
                   type: "success",
                   position: "top",
