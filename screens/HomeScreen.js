@@ -6,6 +6,7 @@ import {
   TouchableOpacity,
   Clipboard,
   SafeAreaView,
+  Text,
 } from "react-native";
 import { FontAwesome } from "@expo/vector-icons";
 import { Root, Toast } from "native-base";
@@ -57,13 +58,25 @@ export default HomeScreen = (props) => {
         <SafeAreaView style={styles.container}>
           <ColorWheel
             initialColor={copiedColor}
-            onColorChange={(hsv) => console.log({ hsv })}
+            onColorChange={(hsv) => setCopiedColor(colorsys.hsvToHex(hsv))}
             onColorChangeComplete={(hsv) =>
               setCopiedColor(colorsys.hsvToHex(hsv))
             }
-            style={{ width: Dimensions.get("window").width }}
+            style={{
+              width: Dimensions.get("window").width,
+              flex: 2,
+              justifyContent: "flex-end",
+            }}
             thumbStyle={{ height: 30, width: 30, borderRadius: 30 }}
           />
+          <View
+            style={{
+              flex: 1,
+              alignItems: "center",
+            }}
+          >
+            <Text style={{ fontSize: 26, marginTop: 15 }}>{copiedColor}</Text>
+          </View>
         </SafeAreaView>
         <View style={styles.bottomView}>
           <View style={styles.leftContainer} />
