@@ -104,7 +104,7 @@ export default HomeScreen = (props) => {
             <View style={{ flex: 1 }} />
             <View style={{ flex: 1 }}>
               <TouchableOpacity onPress={() => navigation.navigate("History")}>
-                <FontAwesome name="history" size={50} color="black" />
+                <FontAwesome name="history" size={36} color="black" />
               </TouchableOpacity>
             </View>
           </View>
