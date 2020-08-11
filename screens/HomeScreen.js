@@ -18,12 +18,11 @@ import colorsys from "colorsys";
 
 const styles = StyleSheet.create({
   container: {
-    ...StyleSheet.absoluteFillObject,
+    flex: 1,
   },
   bottomView: {
     width: "100%",
     height: 70,
-    backgroundColor: "#EE5407",
     alignItems: "center",
     position: "absolute",
     flexDirection: "row",
@@ -98,14 +97,14 @@ export default HomeScreen = (props) => {
                 dispatch(addColor({ color: makeColor(copiedColor) }))
               }
             >
-              <FontAwesome name="circle" size={50} color="gray" />
+              <FontAwesome name="circle" size={50} color="#0099ff" />
             </TouchableOpacity>
           </View>
           <View style={styles.rightContainer}>
             <View style={{ flex: 1 }} />
             <View style={{ flex: 1 }}>
               <TouchableOpacity onPress={() => navigation.navigate("History")}>
-                <FontAwesome name="history" size={50} color="gray" />
+                <FontAwesome name="history" size={50} color="black" />
               </TouchableOpacity>
             </View>
           </View>
