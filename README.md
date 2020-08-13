@@ -15,7 +15,7 @@ production:
 $ npm run publish:prod
 ```
 
-## Building Standalone Android App
+## Building Android App
 
 ```
 development:
