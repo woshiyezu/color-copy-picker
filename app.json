@@ -15,7 +15,12 @@
     },
     "assetBundlePatterns": ["**/*"],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": false,
+      "bundleIdentifier": "jp.millennium.ncl.colorcopypicker"
+    },
+    "android": {
+      "package": "jp.millennium.ncl.colorcopypicker",
+      "versionCode": 1
     },
     "web": {
       "favicon": "./assets/favicon.png"
