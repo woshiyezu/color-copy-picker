@@ -12,13 +12,13 @@ $ npm install --save-dev npm-run-all
 2. Install dependencies.
 
 ```
-npm install
+$ npm install
 ```
 
 3. Run project.
  
 ```
-expo start
+$ expo start
 ```
 
 ## Publishing
