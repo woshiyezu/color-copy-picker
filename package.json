@@ -13,7 +13,7 @@
     "android:dev:file": "mkdir -p .build && wget \"$(expo url:apk)\" -O .build/app.apk",
     "android:prod": "npm-run-all -s android:prod:*",
     "android:prod:build": "expo build:android --release-channel prod",
-    "android:prod:file": "mkdir -p .build && wget \"$(expo u rl:apk)\" -O .build/app.apk"
+    "android:prod:file": "mkdir -p .build && wget \"$(expo url:apk)\" -O .build/app.apk"
   },
   "dependencies": {
     "@react-native-community/masked-view": "^0.1.10",
