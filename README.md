@@ -24,3 +24,6 @@ $ npm run android:dev
 production:
 $ npm run android:prod
 ```
+
+## Author
+Yezu Tanaka (田中葉子)
